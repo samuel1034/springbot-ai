@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "C:/Users/samue/Downloads/springbotai/src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/samue/Downloads/springbotai/src/main/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/samue/Downloads/springbotai/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\samue\\Downloads\\springbotai\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\samue\\Downloads\\springbotai\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/samue/Downloads/springbotai/target/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/samue/Downloads/springbotai/target/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/samue/Downloads/springbotai/src/main/frontend/generated/jar-resources",
+  "themeName": "my-theme",
+  "clientServiceWorkerSource": "C:\\Users\\samue\\Downloads\\springbotai\\target\\sw.ts",
+  "pwaEnabled": true,
+  "offlineEnabled": true,
+  "offlinePath": "'.'"
+}
