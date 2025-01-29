@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.aichatbot.service.ChatService;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Image;
@@ -10,11 +11,16 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-@Route("")
+@SpringBootApplication
+@RestController
+@RequestMapping("/")
 @CssImport("./styles/shared-styles.css")
 public class MainView extends VerticalLayout {
 
@@ -39,12 +45,7 @@ public class MainView extends VerticalLayout {
                 .set("font-weight", "bold")
                 .set("margin", "20px 0");
 
-        Image javaImage = new Image("/images/java.png", "Java Logo");
-        javaImage.setWidth("80px");
-        javaImage.setHeight("80px");
-        javaImage.getStyle().set("border-radius", "50%");
-
-        headerLayout.add(title, javaImage);
+        headerLayout.add(title);
         headerLayout.setSpacing(true);
         add(headerLayout);
 
@@ -67,6 +68,9 @@ public class MainView extends VerticalLayout {
         TextField inputField = new TextField();
         inputField.setWidthFull();
         inputField.setPlaceholder("Message");
+
+        // Add KeyPressListener for the "Enter" key
+        inputField.addKeyPressListener(Key.ENTER, event -> sendMessage(inputField));
 
         Button sendButton = new Button("Send", event -> sendMessage(inputField));
         sendButton.getStyle()
